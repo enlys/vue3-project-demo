@@ -37,13 +37,22 @@ module.exports = {
             },
             /* css 转码 */
             {
-                test: /\.(sa|sc|le|c)ss$/,
+                test: /\.css$/,
                 use: [{
                         loader: MiniCssExtractPlugin.loader,
                     },
                     "css-loader",
                     "postcss-loader",
-                    // 当解析antd.less，必须写成下面格式，否则会报Inline JavaScript is not enabled错误
+                ],
+            },
+            /* less */
+            {
+                test: /\.less$/,
+                use: [{
+                        loader: MiniCssExtractPlugin.loader,
+                    },
+                    "css-loader",
+                    "postcss-loader",
                     {
                         loader: "less-loader",
                         options: {

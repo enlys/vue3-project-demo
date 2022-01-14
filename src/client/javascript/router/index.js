@@ -11,12 +11,12 @@ const router = createRouter({
       {
         path: '/home',
         name: 'Home',
-        component: Home
+        component: import('../views/Home.vue')
       },
       {
         path: '/about',
         name: 'About',
-        component: () => import(/* webpackChunkName: "data" */ '../views/About.vue')
+        component: () => import('../views/About.vue')
       },
     ]
   })

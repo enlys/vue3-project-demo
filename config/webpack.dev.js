@@ -4,6 +4,10 @@ const {
 const commom = require('./webpack.common');
 module.exports = merge(commom, {
     mode: 'development',
+    cache: {
+        type: 'filesystem',
+        allowCollectingMemory: true,
+    },
     devServer: {
         // 当使用 [HTML5 History API] 时，任意的 `404` 响应被替代为 `index.html`
         historyApiFallback: true,
